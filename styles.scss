@@ -1,0 +1,355 @@
+@import "~@momentum-ui/core/scss/momentum-ui-components";
+@import "~@webex/react-component-activity-text/src/styles";
+
+.activity-item--adaptive-card {
+  @extend .activityText;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  border: 1px solid #d2d5d6;
+  border-radius: 4px;
+  max-width: 432px;
+  padding: 1px;
+  ol,
+  ul {
+    margin: 1em 1.5em !important;
+  }
+}
+.ac-container {
+  .ac-actionSet {
+    margin-left: 4px;
+    flex-wrap: wrap;
+  }
+  .ac-input-container > div:first-child {
+    width: 100%;
+  }
+
+  .ac-pushButton {
+    &.style-positive {
+      &.style-default {
+        @extend .md-button, .md-button--white;
+        box-shadow: none;
+        height: 28px;
+        padding-bottom: 0px;
+        padding-top: 0px;
+        padding-left: 16px;
+        padding-right: 16px;
+        color: #1b8728;
+        border: 1px solid #1b8728;
+        margin-top: 4px;
+        margin-bottom: 8px;
+        &.expandable {
+          @extend .icon-arrow-down_12;
+
+          flex-direction: row-reverse;
+          &:before {
+            font-family: "momentum-ui-icons";
+            margin: auto 0px auto 6px;
+          }
+          &.expanded {
+            @extend .md-button:active;
+            color: #ffffff;
+            background-color: #196323;
+            @extend .icon-arrow-up_12;
+          }
+        }
+      }
+    }
+    &.style-positive {
+      &.style-default:hover {
+        color: #ffffff;
+        background-color: #1b8728;
+      }
+    }
+    &.style-positive {
+      &.style-default:disabled {
+        color: #929596;
+        background-color: #e6e8e8;
+        border: none;
+      }
+    }
+    &.style-destructive {
+      &.style-default {
+        @extend .md-button, .md-button--white;
+        box-shadow: none;
+        height: 28px;
+        padding-bottom: 0px;
+        padding-top: 0px;
+        padding-left: 16px;
+        padding-right: 16px;
+        color: #d93829;
+        border: 1px solid #d93829;
+        margin-top: 4px;
+        margin-bottom: 8px;
+        &.expandable {
+          @extend .icon-arrow-down_12;
+
+          flex-direction: row-reverse;
+          &:before {
+            font-family: "momentum-ui-icons";
+            margin: auto 0px auto 6px;
+          }
+          &.expanded {
+            @extend .md-button:active;
+            color: #ffffff;
+            background-color: #a12c23;
+            @extend .icon-arrow-up_12;
+          }
+        }
+      }
+    }
+    &.style-destructive {
+      &.style-default:hover {
+        color: #ffffff;
+        background-color: #d93829;
+      }
+    }
+    &.style-destructive {
+      &.style-default:disabled {
+        color: #929596;
+        background-color: #e6e8e8;
+        border: none;
+      }
+    }
+    &.style-default {
+      @extend .md-button, .md-button--white;
+      min-width: 0px;
+      box-shadow: none;
+      height: 28px;
+      padding-bottom: 0px;
+      padding-top: 0px;
+      padding-left: 16px;
+      padding-right: 16px;
+      color: #007ea8;
+      border: 1px solid #007ea8;
+      margin-top: 4px;
+      margin-bottom: 8px;
+      &.expandable {
+        @extend .icon-arrow-down_12;
+
+        flex-direction: row-reverse;
+        &:before {
+          font-family: "momentum-ui-icons";
+          margin: auto 0px auto 6px;
+        }
+        &.expanded {
+          @extend .md-button:active;
+          color: #ffffff;
+          background-color: #0a5e7d;
+          @extend .icon-arrow-up_12;
+        }
+      }
+    }
+    &.style-default:hover {
+      color: #ffffff;
+      background-color: #007ea8;
+    }
+    &.style-default:disabled {
+      color: #929596;
+      background-color: #e6e8e8;
+      border: none;
+    }
+  }
+
+  .ac-textInput {
+    .md-input__wrapper {
+      box-sizing: border-box;
+      display: block;
+      flex-grow: 1;
+      position: relative;
+      padding: 0;
+      .md-input__after,
+      .md-input__before {
+        -webkit-box-sizing: inherit;
+        -moz-box-sizing: inherit;
+        box-sizing: inherit;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        flex-flow: row nowrap;
+        position: absolute;
+        height: 100%;
+        top: 0;
+        width: 2.75rem;
+      }
+      .md-input__after {
+        right: 0;
+        left: auto;
+      }
+    }
+    .md-input {
+      color: #535759;
+      background-color: #ffffff;
+      border: 1px solid #d2d5d6;
+    }
+    .md-input:hover {
+      color: #535759;
+      background-color: #e6e8e8;
+      border: 1px solid #d2d5d6;
+    }
+    .md-input:active {
+      color: #535759;
+      background-color: #d2d5d6;
+      border: 1px solid #b4b6b8;
+    }
+    .md-input:disabled {
+      color: #d2d5d6;
+      background-color: #e6e8e8;
+      border: none;
+    }
+    .md-input:focus {
+      color: #535759;
+      background-color: #ffffff;
+      border: 1px solid #1dc4f2;
+    }
+    .md-input:read-only {
+      color: #171b1f;
+      background-color: #f2f4f5;
+      border: none;
+    }
+  }
+  .md-select {
+    .md-select > .md-button--input .md-select__label .md-button {
+      background-color: #ffffff;
+      color: #535759;
+      border: 1px solid #d2d5d6;
+      text-align: left;
+    }
+    .md-button:hover {
+      background-color: #e6e8e8;
+      color: #535759;
+      border: 1px solid #d2d5d6;
+    }
+    .md-button:active {
+      background-color: #d2d5d6;
+      color: #535759;
+      border: 1px solid #b4b6b8;
+    }
+    .active {
+      background-color: #f2f4f5;
+      color: #171b1f;
+      border: 1px solid #b4b6b8;
+    }
+    .md-button:disabled {
+      background-color: #e6e8e8;
+      color: #d2d5d6;
+      border: none;
+    }
+    .md-button__children {
+      justify-content: left;
+    }
+    .md-select__label {
+      width: 100%;
+      display: flex;
+      -webkit-box-pack: justify;
+      justify-content: space-between;
+      align-content: center;
+      -webkit-box-align: center;
+      align-items: center;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      flex-flow: row nowrap;
+      .md-icon {
+        vertical-align: middle;
+      }
+    }
+    .md-button {
+      background-color: #ffffff;
+      color: #535759;
+      border: 1px solid #d2d5d6;
+      text-align: left;
+      width: 100%;
+      border-radius: 4px;
+    }
+  }
+  .md-list-item {
+    .md-checkbox {
+      .md-checkbox__label::before {
+        background-color: #e6e8e8;
+      }
+      .md-checkbox__label {
+        color: #171b1f;
+      }
+    }
+  }
+  .md-list-item:hover {
+    .md-checkbox__label::before {
+      background-color: #d2d5d6;
+    }
+  }
+  .md-list-item:active {
+    .md-checkbox__label::before {
+      background-color: #b4b6b8;
+    }
+  }
+  .ac-input {
+    margin-bottom: 0px;
+    .md-input {
+      margin-bottom: 0px;
+      padding-right: 44px;
+    }
+    .md-event-overlay {
+      position: static;
+      .md-event-overlay__children {
+        position: static;
+        overflow-x: hidden;
+      }
+    }
+    button {
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+  .ac-input-container {
+    margin-bottom: 0px;
+    .ac-numberInput {
+      color: #535759;
+      background-color: #ffffff;
+      border: 1px solid #d2d5d6;
+      border-radius: 4px;
+      height: 36px;
+    }
+    .ac-dateInput {
+      color: #535759;
+      background-color: #ffffff;
+      border: 1px solid #d2d5d6;
+      border-radius: 4px;
+      height: 36px;
+    }
+    .ac-timeInput {
+      color: #535759;
+      background-color: #ffffff;
+      border: 1px solid #d2d5d6;
+      border-radius: 4px;
+      height: 36px;
+    }
+    .md-input {
+      margin-bottom: 0px;
+      width: 100%;
+    }
+    .md-event-overlay {
+      position: static;
+      .md-event-overlay__children {
+        position: static;
+      }
+    }
+    button {
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+  .ac-image {
+    max-height: none !important;
+  }
+  .ac-fact-value {
+    .ac-textBlock {
+      word-wrap: anywhere !important;
+    }
+  }
+
+  .ac-textBlock {
+    ol {
+      overflow: unset !important;
+    }
+  }
+}
